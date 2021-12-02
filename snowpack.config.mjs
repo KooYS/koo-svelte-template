@@ -1,14 +1,31 @@
+
+
+const production = process.env.NODE_ENV === 'production'
+
+function babelOptions() {
+  return {
+    plugins: production
+      ? ['transform-remove-console']
+      : []
+  }
+}
+
 /** @type {import("snowpack").SnowpackUserConfig } */
 export default {
   mount: {
     public: {url: '/', static: true},
     src: {url: '/dist'},
   },
+  devOptions: {
+    tailwindConfig: './tailwind.config.js',
+  },
   plugins: [
     '@snowpack/plugin-svelte',
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-optimize',  
-    '@snowpack/plugin-babel',
+    ['@snowpack/plugin-babel', {
+      transformOptions: babelOptions()
+    }],
     [
       '@snowpack/plugin-typescript',
       {
@@ -29,7 +46,8 @@ export default {
     /* ... */
   },
   alias: {
-    '@':'./src'	
+    '@': './src',
+    '~': './src'
   },
   devOptions: {
       //port: 8080,
