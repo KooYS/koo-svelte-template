@@ -9,7 +9,11 @@
 
     cd proj_name
 
-    npm run start
+    npm run dev
+
+      
+    http://localhost:8080 -> Home
+    http://localhost:8080/#/fetch -> axios test
     </code>
 </pre>
 

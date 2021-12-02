@@ -46,8 +46,8 @@ export default {
     /* ... */
   },
   alias: {
-    '@': './src',
-    '~': './src'
+    '@': './src'
+    // '~': './src'
   },
   devOptions: {
       //port: 8080,

@@ -10,9 +10,8 @@
     "baseUrl": "./",
     /* paths - import rewriting/resolving */
     "paths": {
-      "@/*": ["src/*"],
-      "~/*": ["src/*"],
-      
+      "@/*": ["src/*"]
+      // "~/*": ["src/*"],
     },
     /* noEmit - Snowpack builds (emits) files, not tsc. */
     "noEmit": true,
